@@ -25,7 +25,7 @@ Open any `.html` file directly in your browser (double-click or drag into browse
 Start from `index.html`.
 
 ### Option B — Vercel (hosted)
-Once deployed, you'll receive a URL like `https://shopbuggy.vercel.app`.  
+Once deployed, you'll receive a URL like `https://shop-buggy.vercel.app`.  
 Open it in your browser — no login or setup required.
 
 > **Tip:** Test in multiple browsers (Chrome, Firefox, Edge) and also try resizing the window to a mobile width.
