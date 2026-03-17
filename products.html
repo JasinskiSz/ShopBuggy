@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products – ShopBuggy</title>
+  <meta name="description" content="Browse our full range of products. Filter by category and sort by price." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">Shop<span>Buggy</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <!-- BUG #1 repeated in nav -->
+        <li><a href="product.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <span class="cart-btn" style="border-radius:6px;padding:9px 18px;font-weight:600;font-size:0.92rem;cursor:pointer;">
+          🛒 Cart <span class="cart-count">0</span>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="section">
+      <div class="container">
+
+        <h1 class="section-title">All Products</h1>
+        <p class="section-sub">Discover our curated catalogue across multiple categories.</p>
+
+        <!-- TOOLBAR -->
+        <div class="products-toolbar">
+          <!-- BUG #10: search is case-sensitive, and doesn't trim spaces -->
+          <input type="text" id="searchInput" placeholder="Search products…" oninput="filterProducts()" />
+
+          <!-- BUG #6: filter select uses wrong ID in JS — points to 'categoryFilter' but JS reads 'catFilter' -->
+          <select id="categoryFilter" onchange="filterByCategory()">
+            <option value="">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="home">Home & Garden</option>
+            <option value="sports">Sports</option>
+          </select>
+
+          <!-- BUG #7: sort button sorts alphabetically not numerically -->
+          <button class="btn btn-secondary btn-sm" onclick="sortByPrice()">Sort by Price ↑</button>
+          <button class="btn btn-secondary btn-sm" onclick="resetProducts()">Reset</button>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div class="products-grid" id="productsGrid"></div>
+        <p id="noResults" style="display:none;color:#6b7280;margin-top:24px;">No products found.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <!-- BUG #5 repeated -->
+        <span>© 2019 ShopBuggy Ltd. All rights reserved.</span>
+        <span>Made with ❤️ somewhere on Earth</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="products.js"></script>
+
+</body>
+</html>

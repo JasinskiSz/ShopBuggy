@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – ShopBuggy</title>
+  <meta name="description" content="Learn about the ShopBuggy team, our mission, and our story." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">Shop<span>Buggy</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <span class="cart-btn" style="border-radius:6px;padding:9px 18px;font-weight:600;font-size:0.92rem;">
+          🛒 Cart <span class="cart-count">0</span>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO BANNER -->
+    <section style="background:linear-gradient(135deg,#0f0f1a,#1a1a2e);color:#fff;padding:72px 0 56px;">
+      <div class="container">
+        <div style="max-width:560px;">
+          <div class="hero-eyebrow" style="margin-bottom:20px;">👋 Our Story</div>
+          <h1 style="font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:800;line-height:1.2;margin-bottom:16px;">
+            Built by shoppers,<br/>for shoppers.
+          </h1>
+          <p style="color:rgba(255,255,255,0.65);font-size:1.05rem;line-height:1.7;">
+            ShopBuggy started in a garage in 2021. Today we serve over 850,000 happy customers across 38 countries.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION -->
+    <section class="section">
+      <div class="container" style="max-width:740px;">
+        <h2 class="section-title">Our Mission</h2>
+        <p style="color:#374151;line-height:1.8;font-size:1.05rem;margin-bottom:20px;">
+          We believe great products shouldn't come with a premium price tag. Our mission is to connect consumers with
+          quality goods from trusted sellers worldwide — quickly, safely, and affordably.
+        </p>
+        <p style="color:#374151;line-height:1.8;font-size:1.05rem;">
+          From day one we've been obsessed with the customer experience: fast shipping, straightforward returns, and
+          a team that actually picks up the phone. We're proud to say 99.2% of our customers rate their experience
+          4 stars or higher.
+        </p>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <!-- BUG #23: "Meet the Team" anchor tag in nav doesn't work — ID mismatch -->
+    <section class="section" style="background:#f9fafb;" id="the-team">
+      <div class="container">
+        <!-- Nav above uses #meet-team but section has id="the-team" -->
+        <h2 class="section-title" id="meet-team" style="display:none;"></h2>
+        <h2 class="section-title">Meet the Team</h2>
+        <p class="section-sub">The people behind the magic.</p>
+
+        <div class="team-grid">
+
+          <div class="team-card">
+            <div class="team-avatar">👩</div>
+            <div class="team-name">Sarah Thompson</div>
+            <div class="team-role">CEO & Co-Founder</div>
+          </div>
+
+          <!-- BUG #21: Two team members share the same name "John Smith" -->
+          <div class="team-card">
+            <div class="team-avatar">👨</div>
+            <div class="team-name">John Smith</div>
+            <div class="team-role">CTO & Co-Founder</div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">👩‍💼</div>
+            <div class="team-name">Maria Garcia</div>
+            <!-- BUG #24: This team member's role is empty — missing content -->
+            <div class="team-role"></div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">👨‍💻</div>
+            <!-- BUG #21: duplicate name -->
+            <div class="team-name">John Smith</div>
+            <div class="team-role">Head of Engineering</div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">👩‍🎨</div>
+            <div class="team-name">Priya Patel</div>
+            <div class="team-role">Head of Design</div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">🧑‍🤝‍🧑</div>
+            <div class="team-name">Marcus Lee</div>
+            <div class="team-role">Customer Experience Lead</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Our Journey</h2>
+        <!-- BUG #22: Timeline heading says "from the beginning" but events are listed newest-first (reverse) -->
+        <p class="section-sub">Our story from the very beginning — how it all started.</p>
+
+        <div class="timeline">
+
+          <!-- Listed newest → oldest (reverse chronological — opposite of what the heading implies) -->
+          <div class="timeline-item">
+            <div class="timeline-dot">🚀</div>
+            <div class="timeline-content">
+              <div class="timeline-year">2024</div>
+              <h4>Global Expansion</h4>
+              <p>Launched in 38 countries, crossed 850,000 active customers, and opened two new fulfilment centres.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">📱</div>
+            <div class="timeline-content">
+              <div class="timeline-year">2023</div>
+              <h4>Mobile App Launch</h4>
+              <p>Released iOS and Android apps with 4.8-star average ratings in the first month.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">🌍</div>
+            <div class="timeline-content">
+              <div class="timeline-year">2022</div>
+              <h4>Series A Funding</h4>
+              <p>Secured $12M in Series A funding. Grew the team from 8 to 45 people.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">💡</div>
+            <div class="timeline-content">
+              <div class="timeline-year">2021</div>
+              <h4>The Beginning</h4>
+              <p>Sarah and the first John Smith founded ShopBuggy from a garage in San Francisco with just 200 products.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Shop<span>Buggy</span></a>
+          <p>Your one-stop shop for everything you need.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <!-- BUG #23: anchor link points to #meet-team but element with that ID is hidden -->
+            <li><a href="about.html#meet-team">Meet the Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow us</h4>
+          <ul>
+            <li><a href="#">Twitter / X</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2019 ShopBuggy Ltd. All rights reserved.</span>
+        <span>Made with ❤️ somewhere on Earth</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+</html>

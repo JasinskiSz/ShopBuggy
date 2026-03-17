@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – ShopBuggy</title>
+  <meta name="description" content="Sign in or create a ShopBuggy account to access your orders and wishlist." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">Shop<span>Buggy</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span class="cart-btn" style="border-radius:6px;padding:9px 18px;font-weight:600;font-size:0.92rem;">
+          🛒 Cart <span class="cart-count">0</span>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="auth-wrapper">
+    <div class="auth-card">
+
+      <div class="auth-logo">
+        <span>Shop<em>Buggy</em></span>
+      </div>
+
+      <!-- TABS -->
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tabLogin" onclick="switchTab('login')">Login</button>
+        <button class="auth-tab" id="tabRegister" onclick="switchTab('register')">Register</button>
+      </div>
+
+      <!-- LOGIN PANEL -->
+      <div class="auth-panel active" id="panelLogin">
+        <form onsubmit="doLogin(event)">
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" />
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <label style="display:flex;align-items:center;gap:8px;font-size:0.88rem;cursor:pointer;">
+              <input type="checkbox" id="rememberMe" /> Remember me
+            </label>
+            <!-- BUG #20: "Forgot password?" reveals a hardcoded email address via alert() -->
+            <a href="#" onclick="forgotPassword(event)" style="font-size:0.88rem;">Forgot password?</a>
+          </div>
+          <!-- BUG #19: error message text is white on white — invisible -->
+          <div class="alert alert-danger" id="loginError" style="display:none;">
+            Invalid email or password. Please try again.
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-bottom:12px;">Sign In</button>
+        </form>
+        <div class="auth-footer">Don't have an account? <a href="#" onclick="switchTab('register');return false;">Create one →</a></div>
+      </div>
+
+      <!-- REGISTER PANEL -->
+      <div class="auth-panel" id="panelRegister">
+        <form onsubmit="doRegister(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div class="form-group">
+              <label for="regFirst">First Name</label>
+              <input type="text" id="regFirst" placeholder="Jane" />
+            </div>
+            <div class="form-group">
+              <label for="regLast">Last Name</label>
+              <input type="text" id="regLast" placeholder="Doe" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email</label>
+            <input type="email" id="regEmail" placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <!-- BUG #16: password field is type="text" — shows characters in plain text -->
+            <label for="regPassword">Password</label>
+            <input type="text" id="regPassword" placeholder="Create a password" />
+          </div>
+          <div class="form-group">
+            <label for="regConfirm">Confirm Password</label>
+            <input type="password" id="regConfirm" placeholder="Repeat your password" />
+          </div>
+          <div class="form-group">
+            <label style="display:flex;align-items:flex-start;gap:8px;font-size:0.88rem;cursor:pointer;font-weight:400;">
+              <input type="checkbox" id="termsCheck" style="margin-top:2px;" />
+              I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+          <!-- BUG #19: register error also white-on-white -->
+          <div class="alert alert-danger" id="registerError" style="display:none;">
+            Please fix the errors above.
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-bottom:12px;">Create Account</button>
+        </form>
+        <div class="auth-footer">Already have an account? <a href="#" onclick="switchTab('login');return false;">Sign in →</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="login.js"></script>
+
+</body>
+</html>

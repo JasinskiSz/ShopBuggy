@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopBuggy – Your Favourite Online Store</title>
+  <meta name="description" content="ShopBuggy – premium products delivered fast. Discover electronics, fashion, and more." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">Shop<span>Buggy</span></a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <!-- BUG #1: URL typo — points to product.html (missing 's') instead of products.html -->
+        <li><a href="product.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="products.html" class="cart-btn nav-links" style="border-radius:6px;padding:9px 18px;font-weight:600;font-size:0.92rem;">
+          🛒 Cart <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-eyebrow">✦ New arrivals every week</div>
+          <h1>
+            Discover Amazing<br />
+            Products at <span class="highlight">Unreal Prices</span>
+          </h1>
+          <p>Browse thousands of curated items from trusted sellers around the globe. Quality guaranteed or your money back.</p>
+          <div class="hero-cta">
+            <!-- BUG #2: Button text typo — "Shope Now" instead of "Shop Now" -->
+            <a href="products.html" class="btn btn-accent">Shope Now →</a>
+            <a href="about.html" class="btn btn-secondary" style="color:#fff;border-color:rgba(255,255,255,0.35);">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Why ShopBuggy?</h2>
+        <p class="section-sub">We've built something special — here's what makes us different.</p>
+
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <!-- BUG #4: broken image src — file doesn't exist -->
+            <img src="assets/images/fast-shipping-banner.png" alt="Fast shipping" class="feature-img" />
+            <div class="feature-icon" style="background:#ede9ff;">🚚</div>
+            <h3>Lightning Delivery</h3>
+            <p>Order by noon and receive your items the same evening. We partner with premium couriers.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#fff0ec;">🔒</div>
+            <h3>Secure Payments</h3>
+            <p>Bank-grade 256-bit SSL encryption on every transaction. Pay with card, PayPal or crypto.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#dcfce7;">↩️</div>
+            <h3>Easy Returns</h3>
+            <p>Not happy? Return anything within 30 days, no questions asked. Full refund guaranteed.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#fef3c7;">⭐</div>
+            <h3>Verified Reviews</h3>
+            <p>Every rating comes from a verified buyer. Real opinions, zero fake reviews.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section" style="background:#f3f4f6;padding:48px 0;">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">850K+</div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">12,400</div>
+            <div class="stat-label">Products Listed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">99.2%</div>
+            <div class="stat-label">Satisfaction Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">48h</div>
+            <div class="stat-label">Avg. Delivery Time</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Stay in the Loop</h2>
+        <p>Get exclusive deals, new arrivals, and discount codes straight to your inbox.</p>
+        <!-- BUG #3: Form accepts any input including empty email — no validation -->
+        <form class="newsletter-form" onsubmit="newsletterSubmit(event)">
+          <input type="text" id="newsletterEmail" placeholder="Enter your email address" />
+          <button type="submit" class="btn btn-accent">Subscribe</button>
+        </form>
+        <div id="newsletterMsg" style="margin-top:14px;font-size:0.9rem;display:none;color:#fff;font-weight:600;"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Shop<span>Buggy</span></a>
+          <p>Your one-stop shop for everything you need. Quality products, great prices, fast delivery.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html?cat=electronics">Electronics</a></li>
+            <li><a href="products.html?cat=fashion">Fashion</a></li>
+            <li><a href="products.html?cat=home">Home & Garden</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <!-- BUG #5: Hardcoded copyright year — 2019 instead of current year -->
+        <span>© 2019 ShopBuggy Ltd. All rights reserved.</span>
+        <span>Made with ❤️ somewhere on Earth</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function newsletterSubmit(e) {
+      e.preventDefault();
+      // BUG #3: no email validation — shows success for any input, even blank
+      const msg = document.getElementById('newsletterMsg');
+      msg.style.display = 'block';
+      msg.textContent = '🎉 Success! You\'ve been subscribed.';
+    }
+  </script>
+
+</body>
+</html>
